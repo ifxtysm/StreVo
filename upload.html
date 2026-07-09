@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Video | StreVo</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="upload-page">
+
+    <div class="upload-card">
+
+        <h1>Upload Video</h1>
+
+        <p>Share your content with the StreVo community.</p>
+
+        <div class="upload-box">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <h3>Drag & Drop your Video</h3>
+
+            <span>or</span>
+
+            <label for="videoFile" class="browse-btn">
+                Browse Files
+            </label>
+
+            <input
+                type="file"
+                id="videoFile"
+                accept="video/*"
+                hidden>
+
+        </div>
+
+        <div class="thumbnail-section">
+
+            <label>Thumbnail</label>
+
+            <input
+                type="file"
+                id="thumbnail"
+                accept="image/*">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Video Title</label>
+
+            <input
+                type="text"
+                placeholder="Enter video title">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Description</label>
+
+            <textarea
+                rows="6"
+                placeholder="Write something about your video..."></textarea>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-group">
+
+                <label>Category</label>
+
+                <select>
+
+                    <option>Technology</option>
+                    <option>Gaming</option>
+                    <option>Education</option>
+                    <option>Music</option>
+                    <option>Travel</option>
+                    <option>Sports</option>
+                    <option>Entertainment</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Visibility</label>
+
+                <select>
+
+                    <option>Public</option>
+                    <option>Private</option>
+                    <option>Unlisted</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Tags</label>
+
+            <input
+                type="text"
+                placeholder="HTML, CSS, JavaScript">
+
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-bar"></div>
+
+        </div>
+
+        <button class="upload-btn">
+
+            <i class="fa-solid fa-upload"></i>
+
+            Upload Video
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/upload.js"></script>
+
+</body>
+
+</html>

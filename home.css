@@ -1,0 +1,453 @@
+.hero{
+
+    width:100%;
+    height:420px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD8OxrL0S8IZb-o-hgcFXCtkbRhL6DJDqURAjhp-q4-A&s=10");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    padding:70px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+.hero-content{
+
+    max-width:650px;
+
+}
+
+.hero h1{
+
+    font-size:54px;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    color:#d6d6d6;
+
+    margin-bottom:35px;
+
+}
+
+.hero button{
+
+    padding:15px 34px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.hero button:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,77,79,.35);
+
+}
+
+/* ===========================
+   CATEGORY SECTION
+=========================== */
+
+.categories{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:35px;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+
+}
+
+.categories::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.categories button{
+
+    padding:12px 22px;
+
+    background:var(--surface);
+
+    color:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+    white-space:nowrap;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.categories button:hover{
+
+    background:var(--primary);
+
+}
+
+.categories .active{
+
+    background:var(--primary);
+
+}
+
+/* ===========================
+   VIDEO GRID
+=========================== */
+
+.videos{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.04);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+/* Thumbnail */
+
+.card>img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.card:hover>img{
+
+    transform:scale(1.06);
+
+}
+
+/* ===========================
+   VIDEO INFO
+=========================== */
+
+.video-info{
+
+    display:flex;
+
+    gap:15px;
+
+    padding:18px;
+
+}
+
+.video-info img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.details{
+
+    flex:1;
+
+}
+
+.details h3{
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    margin-bottom:8px;
+
+    color:#fff;
+
+}
+
+.details p{
+
+    font-size:14px;
+
+    color:#b4b4b4;
+
+    margin-bottom:5px;
+
+}
+
+.details span{
+
+    font-size:13px;
+
+    color:#8b949e;
+
+}
+
+/* ===========================
+   HOVER EFFECT
+=========================== */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.card:hover{
+
+    border-color:rgba(255,77,79,.25);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+.hero{
+
+height:360px;
+
+padding:50px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.sidebar{
+
+width:85px;
+
+}
+
+.sidebar span{
+
+display:none;
+
+}
+
+.main-content{
+
+margin-left:85px;
+
+}
+
+.hero{
+
+padding:40px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.search-container{
+
+width:340px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:0 18px;
+
+}
+
+.search-container{
+
+display:none;
+
+}
+
+.main-content{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.sidebar{
+
+left:-100%;
+
+transition:.4s;
+
+}
+
+.hero{
+
+height:300px;
+
+padding:25px;
+
+}
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.videos{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hero{
+
+height:260px;
+
+}
+
+.hero h1{
+
+font-size:25px;
+
+}
+
+.hero button{
+
+padding:12px 22px;
+
+font-size:14px;
+
+}
+
+.video-info{
+
+padding:15px;
+
+}
+
+.details h3{
+
+font-size:15px;
+
+}
+
+}
+.show{
+    left:0;
+}
+
+.search-container{
+    transition:.3s;
+}
+
+.fade{
+    animation:fade .8s ease forwards;
+}
