@@ -1,0 +1,465 @@
+body{
+
+    background:#0d1117;
+
+}
+
+.watch-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:35px;
+
+    padding:100px 35px 35px;
+
+}
+
+.video-section video{
+
+    width:100%;
+
+    border-radius:18px;
+
+    background:#000;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.video-section h2{
+
+    margin:22px 0 12px;
+
+    font-size:30px;
+
+    line-height:1.4;
+
+}
+
+.video-meta{
+
+    display:flex;
+
+    gap:20px;
+
+    color:#94a3b8;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+}
+
+.video-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.video-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.video-actions button{
+
+    padding:12px 22px;
+
+    background:#1f2937;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    border:1px solid #374151;
+
+    transition:.3s;
+
+}
+
+.video-actions button:hover{
+
+    background:#b12325;
+
+    transform:translateY(-3px);
+
+}
+
+.channel-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#161b22;
+
+    border:1px solid #2d3748;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:30px;
+
+}
+
+.channel-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.channel-info img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.channel-info h3{
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.channel-info span{
+
+    color:#94a3b8;
+
+}
+
+.subscribe{
+
+    padding:13px 28px;
+
+    background:#cf181b;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.subscribe:hover{
+
+    background:#b21818;
+
+    transform:translateY(-3px);
+
+}
+
+.description{
+
+    background:#161b22;
+
+    border:1px solid #2d3748;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+}
+
+.description h3{
+
+    margin-bottom:15px;
+
+}
+
+.description p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+.comments{
+
+    background:#161b22;
+
+    border:1px solid #2d3748;
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+.comments h3{
+
+    margin-bottom:20px;
+
+}
+
+.comments textarea{
+
+    width:100%;
+
+    height:120px;
+
+    background:#1f2937;
+
+    color:#fff;
+
+    border:1px solid #374151;
+
+    border-radius:14px;
+
+    padding:15px;
+
+    outline:none;
+
+    resize:none;
+
+    margin-bottom:18px;
+
+    font-family:inherit;
+
+}
+
+.comments textarea:focus{
+
+    border-color:#c81518;
+
+}
+
+.comments button{
+
+    padding:12px 28px;
+
+    background:#c71919;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    margin-bottom:30px;
+
+    transition:.3s;
+
+}
+
+.comments button:hover{
+
+    background:#b01010;
+
+}
+
+.comment{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid #2d3748;
+
+}
+
+.comment img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+}
+
+.comment h4{
+
+    margin-bottom:8px;
+
+}
+
+.comment p{
+
+    color:#94a3b8;
+
+}
+
+.related{
+
+    background:#161b22;
+
+    border:1px solid #2d3748;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    height:fit-content;
+
+}
+
+.related h3{
+
+    margin-bottom:25px;
+
+}
+
+.related-card{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.related-card:hover{
+
+    transform:translateX(6px);
+
+}
+
+.related-card img{
+
+    width:180px;
+
+    height:100px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.related-card h4{
+
+    font-size:16px;
+
+    line-height:1.5;
+
+    margin-bottom:10px;
+
+}
+
+.related-card span{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+@media(max-width:1100px){
+
+    .watch-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .related{
+
+        margin-top:10px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .watch-container{
+
+        padding:90px 20px 20px;
+
+    }
+
+    .video-section h2{
+
+        font-size:24px;
+
+    }
+
+    .channel-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .related-card img{
+
+        width:140px;
+
+        height:80px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .video-actions{
+
+        gap:10px;
+
+    }
+
+    .video-actions button{
+
+        width:100%;
+
+    }
+
+    .related-card{
+
+        flex-direction:column;
+
+    }
+
+    .related-card img{
+
+        width:100%;
+
+        height:180px;
+
+    }
+
+}
