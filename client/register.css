@@ -1,3 +1,10 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
 body{
 
     min-height:100vh;
@@ -113,6 +120,8 @@ body{
     margin-bottom:35px;
 
     font-size:34px;
+
+    color:#fff;
 
 }
 
@@ -264,10 +273,6 @@ body{
 
     height:56px;
 
-    background:#d32b2e;
-
-    color:#fff;
-
     border:none;
 
     border-radius:14px;
@@ -282,11 +287,105 @@ body{
 
 }
 
-.register-form button:hover{
+.register-form button[type="submit"]{
+
+    background:#d32b2e;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+}
+
+.register-form button[type="submit"]:hover{
 
     background:#c42d2d;
 
     transform:translateY(-3px);
+
+}
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:25px 0;
+
+    position:relative;
+
+    color:#94a3b8;
+
+}
+
+.divider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:1px;
+
+    background:#374151;
+
+}
+
+.divider span{
+
+    background:#161b22;
+
+    padding:0 15px;
+
+    z-index:1;
+
+}
+
+.google-btn{
+
+    width:100%;
+
+    height:56px;
+
+    background:#fff;
+
+    color:#111827;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.google-btn:hover{
+
+    background:#f3f4f6;
+
+    transform:translateY(-3px);
+
+}
+
+.google-btn i{
+
+    color:#ea4335;
+
+    font-size:20px;
 
 }
 
@@ -304,44 +403,52 @@ body{
 
     color:#ec272b;
 
+    text-decoration:none;
+
     font-weight:600;
+
+}
+
+.login-link a:hover{
+
+    text-decoration:underline;
 
 }
 
 @media(max-width:900px){
 
-    .register-container{
+.register-container{
 
-        grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-    }
+}
 
-    .register-left{
+.register-left{
 
-        display:none;
+display:none;
 
-    }
+}
 
-    .register-right{
+.register-right{
 
-        padding:40px 30px;
+padding:40px 30px;
 
-    }
+}
 
 }
 
 @media(max-width:500px){
 
-    .register-form h2{
+.register-form h2{
 
-        font-size:28px;
+font-size:28px;
 
-    }
+}
 
-    .input-box{
+.input-box{
 
-        height:55px;
+height:55px;
 
-    }
+}
 
 }

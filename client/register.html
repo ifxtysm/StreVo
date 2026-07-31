@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -23,137 +23,164 @@
 
 <body>
 
-    <div class="register-container">
+<div class="register-container">
 
-        <div class="register-left">
+    <div class="register-left">
 
-            <div class="brand">
+        <div class="brand">
 
-                <i class="fa-solid fa-play"></i>
+            <i class="fa-solid fa-play"></i>
 
-                <h1>StreVo</h1>
-
-            </div>
-
-            <h2>Join StreVo</h2>
-
-            <p>
-
-                Create your account to upload videos, build your audience, and discover content from creators around the world.
-
-            </p>
+            <h1>StreVo</h1>
 
         </div>
 
-        <div class="register-right">
+        <h2>Join StreVo</h2>
 
-            <form class="register-form">
+        <p>
 
-                <h2>Create Account</h2>
+            Create your account to upload videos, build your audience,
+            and discover content from creators around the world.
 
-                <div class="input-box">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    <input
-                        type="text"
-                        placeholder="Full Name"
-                        required>
-
-                </div>
-
-                <div class="input-box">
-
-                    <i class="fa-solid fa-at"></i>
-
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        required>
-
-                </div>
-
-                <div class="input-box">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <input
-                        type="email"
-                        placeholder="Email Address"
-                        required>
-
-                </div>
-
-                <div class="input-box">
-
-                    <i class="fa-solid fa-lock"></i>
-
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        required>
-
-                </div>
-
-                <div class="input-box">
-
-                    <i class="fa-solid fa-lock"></i>
-
-                    <input
-                        type="password"
-                        placeholder="Confirm Password"
-                        required>
-
-                </div>
-
-                <div class="upload-box">
-
-                    <label>
-
-                        <i class="fa-solid fa-image"></i>
-
-                        Upload Profile Picture
-
-                    </label>
-
-                    <input type="file" accept="image/*">
-
-                </div>
-
-                <label class="terms">
-
-                    <input type="checkbox" required>
-
-                    I agree to the Terms & Conditions
-
-                </label>
-
-                <button type="submit">
-
-                    Create Account
-
-                </button>
-
-                <p class="login-link">
-
-                    Already have an account?
-
-                    <a href="login.html">
-
-                        Login
-
-                    </a>
-
-                </p>
-
-            </form>
-
-        </div>
+        </p>
 
     </div>
 
-    <script src="js/register.js"></script>
+    <div class="register-right">
+
+        <form id="registerForm" class="register-form">
+
+            <h2>Create Account</h2>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Full Name"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-at"></i>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                    required>
+
+            </div>
+
+            <div class="upload-box">
+
+                <label>
+
+                    <i class="fa-solid fa-image"></i>
+
+                    Upload Profile Picture
+
+                </label>
+
+                <input
+                    type="file"
+                    id="profilePicture"
+                    accept="image/*">
+
+            </div>
+
+            <label class="terms">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required>
+
+                I agree to the Terms & Conditions
+
+            </label>
+
+            <button type="submit">
+
+                Create Account
+
+            </button>
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="google-btn">
+
+                <i class="fa-brands fa-google"></i>
+
+                Continue with Google
+
+            </button>
+
+            <p class="login-link">
+
+                Already have an account?
+
+                <a href="login.html">
+
+                    Login
+
+                </a>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="register.js"></script>
 
 </body>
-
 </html>

@@ -220,17 +220,25 @@ body{
 
     height:56px;
 
+    border:none;
+
+    outline:none;
+
     border-radius:14px;
 
     font-size:16px;
 
     font-weight:600;
 
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
 .login-form button[type="submit"]{
 
-    background:#d74548;
+    background:#a83133;
 
     color:#fff;
 
@@ -240,7 +248,7 @@ body{
 
 .login-form button[type="submit"]:hover{
 
-    background:#e14747;
+    background:#a32b2b;
 
     transform:translateY(-3px);
 
@@ -285,27 +293,44 @@ body{
 
 .google-btn{
 
-    background:#fff;
+    width:100%;
+
+    height:56px;
+
+    background:#ffffff;
 
     color:#111827;
 
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     gap:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
 
 }
 
 .google-btn:hover{
 
+    background:#f3f4f6;
+
     transform:translateY(-3px);
 
 }
-
 .google-btn i{
 
-    color:#03867b;
+    color:#7c1e16;
+
+    font-size:20px;
 
 }
 

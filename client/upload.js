@@ -1,145 +1,81 @@
-const uploadBox = document.querySelector(".upload-box");
-const videoInput = document.getElementById("videoFile");
-const thumbnailInput = document.getElementById("thumbnail");
-const uploadButton = document.querySelector(".upload-btn");
-const progressBar = document.querySelector(".progress-bar");
-const titleInput = document.querySelector('input[type="text"]');
-const description = document.querySelector("textarea");
-const category = document.querySelectorAll("select")[0];
-const visibility = document.querySelectorAll("select")[1];
-const tags = document.querySelectorAll('input[type="text"]')[1];
+const form = document.getElementById("uploadForm");
 
-uploadBox.addEventListener("click", () => {
-    videoInput.click();
-});
-
-videoInput.addEventListener("change", () => {
-
-    if(videoInput.files.length > 0){
-
-        uploadBox.innerHTML = `
-            <i class="fa-solid fa-circle-check"></i>
-            <h3>${videoInput.files[0].name}</h3>
-            <span>Video selected successfully</span>
-        `;
-
-    }
-
-});
-
-thumbnailInput.addEventListener("change", () => {
-
-    if(thumbnailInput.files.length > 0){
-
-        const label = document.querySelector(".thumbnail-section label");
-
-        label.textContent = `Thumbnail : ${thumbnailInput.files[0].name}`;
-
-    }
-
-});
-
-uploadBox.addEventListener("dragover", e => {
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    uploadBox.style.borderColor = "#ff4d4f";
-    uploadBox.style.background = "rgba(255,77,79,.08)";
+    const token = localStorage.getItem("token");
 
-});
+    if (!token) {
 
-uploadBox.addEventListener("dragleave", () => {
+        alert("Please login first.");
 
-    uploadBox.style.borderColor = "#374151";
-    uploadBox.style.background = "transparent";
+        window.location.href = "login.html";
 
-});
-
-uploadBox.addEventListener("drop", e => {
-
-    e.preventDefault();
-
-    uploadBox.style.borderColor = "#374151";
-    uploadBox.style.background = "transparent";
-
-    const files = e.dataTransfer.files;
-
-    if(files.length){
-
-        videoInput.files = files;
-
-        uploadBox.innerHTML = `
-            <i class="fa-solid fa-circle-check"></i>
-            <h3>${files[0].name}</h3>
-            <span>Video ready for upload</span>
-        `;
-
-    }
-
-});
-
-uploadButton.addEventListener("click", () => {
-
-    if(
-        titleInput.value.trim()==="" ||
-        description.value.trim()===""
-    ){
-
-        alert("Please complete all required fields.");
         return;
 
     }
 
-    uploadButton.disabled = true;
+    const formData = new FormData();
 
-    uploadButton.innerHTML = `
-        <i class="fa-solid fa-spinner fa-spin"></i>
-        Uploading...
-    `;
+    formData.append(
+        "title",
+        document.getElementById("title").value
+    );
 
-    let progress = 0;
+    formData.append(
+        "description",
+        document.getElementById("description").value
+    );
 
-    const interval = setInterval(() => {
+    formData.append(
+        "category",
+        document.getElementById("category").value
+    );
 
-        progress += 2;
+    formData.append(
+        "video",
+        document.getElementById("videoFile").files[0]
+    );
 
-        progressBar.style.width = progress + "%";
+    formData.append(
+        "thumbnail",
+        document.getElementById("thumbnail").files[0]
+    );
 
-        if(progress >= 100){
+    try {
 
-            clearInterval(interval);
+        const response = await fetch(
+            "http://localhost:3000/api/videos/upload",
+            {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+                body: formData
+            }
+        );
 
-            uploadButton.innerHTML = `
-                <i class="fa-solid fa-circle-check"></i>
-                Upload Complete
-            `;
+        const data = await response.json();
 
-            setTimeout(() => {
+        if (response.ok) {
 
-                alert("Video uploaded successfully!");
+            alert("Video uploaded successfully!");
 
-                window.location.href = "index.html";
+            window.location.href = "index.html";
 
-            },1000);
+        } else {
+
+            alert(data.message || "Upload failed.");
 
         }
 
-    },40);
+    } catch (error) {
 
-});
+        console.error(error);
 
-document.querySelectorAll("input, textarea, select").forEach(element => {
+        alert("Server error.");
 
-    element.addEventListener("focus", () => {
-
-        element.style.transform = "scale(1.01)";
-
-    });
-
-    element.addEventListener("blur", () => {
-
-        element.style.transform = "scale(1)";
-
-    });
+    }
 
 });

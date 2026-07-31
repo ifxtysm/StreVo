@@ -1,81 +1,70 @@
-const loginForm = document.querySelector(".login-form");
-const passwordInput = document.querySelector('input[type="password"]');
-const passwordBox = passwordInput.parentElement;
-const loginButton = loginForm.querySelector('button[type="submit"]');
+const loginForm = document.getElementById("loginForm");
 
-const toggleIcon = document.createElement("i");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
-toggleIcon.className = "fa-solid fa-eye";
+const googleButton = document.querySelector(".google-btn");
 
-toggleIcon.style.cursor = "pointer";
-
-passwordBox.appendChild(toggleIcon);
-
-toggleIcon.addEventListener("click", () => {
-
-    if (passwordInput.type === "password") {
-
-        passwordInput.type = "text";
-        toggleIcon.className = "fa-solid fa-eye-slash";
-
-    } else {
-
-        passwordInput.type = "password";
-        toggleIcon.className = "fa-solid fa-eye";
-
-    }
-
-});
-
-loginForm.addEventListener("submit", e => {
+loginForm.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const password = passwordInput.value.trim();
+    try {
 
-    if (email === "" || password === "") {
+        const response = await fetch("http://localhost:3000/api/auth/login", {
 
-        alert("Please fill in all fields.");
-        return;
+            method: "POST",
+
+            headers: {
+
+                "Content-Type": "application/json"
+
+            },
+
+            body: JSON.stringify({
+
+                email: email.value,
+
+                password: password.value
+
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            localStorage.setItem("token", data.token);
+
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            alert("Login Successful!");
+
+            window.location.href = "index.html";
+
+        }
+
+        else {
+
+            alert(data.message);
+
+        }
 
     }
 
-    loginButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Logging in...';
+    catch (error) {
 
-    loginButton.disabled = true;
+        console.error(error);
 
-    setTimeout(() => {
+        alert("Server connection failed.");
 
-        loginButton.innerHTML = "Login";
-        loginButton.disabled = false;
-
-        alert("Frontend Login Successful!");
-
-        window.location.href = "index.html";
-
-    }, 1800);
+    }
 
 });
 
-document.querySelectorAll(".input-box input").forEach(input => {
+googleButton.addEventListener("click", () => {
 
-    input.addEventListener("focus", () => {
-
-        input.parentElement.style.transform = "translateY(-2px)";
-
-    });
-
-    input.addEventListener("blur", () => {
-
-        input.parentElement.style.transform = "translateY(0)";
-
-    });
-
-});
-
-document.querySelector(".google-btn").addEventListener("click", () => {
-
-    alert("Google Login will be available after backend integration.");
+    alert("Google Login will be added in the next version.");
 
 });
