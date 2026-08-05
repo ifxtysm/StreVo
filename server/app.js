@@ -14,6 +14,8 @@ const path = require("path");
 const authRoutes=require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const videoRoutes = require("./routes/videoRoutes");
+const commentRoutes = require("./routes/commentRoutes");
+
 const app = express();
 
 app.use(cors());
@@ -23,6 +25,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth",authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/videos", videoRoutes);
+app.use("/api/comments", commentRoutes);
 app.use("/uploads", express.static("uploads"));
 app.get("/", (req, res) => {
 
