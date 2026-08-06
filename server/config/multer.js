@@ -1,12 +1,25 @@
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
+
+const videoDir = path.join(__dirname, "../uploads/videos");
+const thumbnailDir = path.join(__dirname, "../uploads/thumbnails");
+
+// Create folders if they don't exist
+if (!fs.existsSync(videoDir)) {
+    fs.mkdirSync(videoDir, { recursive: true });
+}
+
+if (!fs.existsSync(thumbnailDir)) {
+    fs.mkdirSync(thumbnailDir, { recursive: true });
+}
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         if (file.fieldname === "video") {
-            cb(null, path.join(__dirname, "../uploads/videos"));
+            cb(null, videoDir);
         } else if (file.fieldname === "thumbnail") {
-            cb(null, path.join(__dirname, "../uploads/thumbnails"));
+            cb(null, thumbnailDir);
         }
     },
 
@@ -31,9 +44,7 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-const upload = multer({
+module.exports = multer({
     storage,
     fileFilter
 });
-
-module.exports = upload;
