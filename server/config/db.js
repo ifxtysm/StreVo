@@ -1,24 +1,24 @@
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "SAM1132005",
-    database: "strevo"
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 
 connection.connect((err) => {
-
-    if(err){
-
+    if (err) {
         console.error("Database Connection Failed");
         console.error(err);
         return;
-
     }
 
-    console.log("✅ MySQL Connected Successfully");
-
+    console.log("✅ Aiven MySQL Connected Successfully");
 });
 
 module.exports = connection;
