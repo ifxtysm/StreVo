@@ -18,7 +18,7 @@ function VideoCard({ video }) {
         >
 
             <img
-                src={`http://localhost:3000/uploads/thumbnails/${video.thumbnail_url}`}
+                src={`https://strevo-api.onrender.com/uploads/thumbnails/${video.thumbnail_url}`}
                 alt={video.title}
             />
 

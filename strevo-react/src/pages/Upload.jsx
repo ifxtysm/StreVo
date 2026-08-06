@@ -48,7 +48,7 @@ function Upload() {
         try {
 
             await axios.post(
-                "http://localhost:3000/api/videos/upload",
+                "https://strevo-api.onrender.com/api/videos/upload",
                 formData,
                 {
                     headers: {

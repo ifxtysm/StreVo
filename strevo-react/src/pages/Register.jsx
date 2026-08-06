@@ -27,7 +27,7 @@ function Register() {
 
             await axios.post(
 
-                "http://localhost:3000/api/auth/register",
+                "https://strevo-api.onrender.com/api/auth/register",
 
                 {
 

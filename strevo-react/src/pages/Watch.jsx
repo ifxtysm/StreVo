@@ -43,7 +43,7 @@ function Watch() {
 
             await axios.put(
 
-                `http://localhost:3000/api/videos/view/${id}`
+                `https://strevo-api.onrender.com/api/videos/view/${id}`
 
             );
 
@@ -63,7 +63,7 @@ function Watch() {
 
             const response = await axios.get(
 
-                "http://localhost:3000/api/videos"
+                "https://strevo-api.onrender.com/api/videos"
 
             );
 
@@ -122,7 +122,7 @@ function Watch() {
 
             const response = await axios.get(
 
-                `http://localhost:3000/api/comments/${id}`
+                `https://strevo-api.onrender.com/api/comments/${id}`
 
             );
 
@@ -154,7 +154,7 @@ function Watch() {
 
             await axios.post(
 
-                "http://localhost:3000/api/comments",
+                "https://strevo-api.onrender.com/api/comments",
 
                 {
 
@@ -196,7 +196,7 @@ function Watch() {
 
             const response = await axios.get(
 
-                `http://localhost:3000/api/videos/related/${id}`
+                `https://strevo-api.onrender.com/api/videos/related/${id}`
 
             );
 
@@ -318,7 +318,7 @@ function Watch() {
                     <video controls>
 
                         <source
-                            src={`http://localhost:3000/uploads/videos/${video.video_url}`}
+                            src={`https://strevo-api.onrender.com/uploads/videos/${video.video_url}`}
                         />
 
                     </video>
@@ -498,7 +498,7 @@ function Watch() {
 
                                 <img
 
-                                    src={`http://localhost:3000/uploads/thumbnails/${item.thumbnail_url}`}
+                                    src={`https://strevo-api.onrender.com/uploads/thumbnails/${item.thumbnail_url}`}
 
                                     alt={item.title}
 

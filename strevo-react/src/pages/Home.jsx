@@ -35,7 +35,7 @@ function Home() {
         try {
 
             const response = await axios.get(
-                "http://localhost:3000/api/videos"
+                "https://strevo-api.onrender.com/api/videos"
             );
 
             setVideos(response.data);
